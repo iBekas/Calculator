@@ -11,11 +11,10 @@
             android:color="@android:color/transparent" />
 
         <corners
-            android:bottomLeftRadius="@dimen/corners_radius"
-            android:bottomRightRadius="@dimen/corners_radius"
-            android:topLeftRadius="@dimen/corners_radius"
-            android:topRightRadius="@dimen/corners_radius" />
+            android:bottomLeftRadius="50dp"
+            android:bottomRightRadius="50dp"
+            android:topLeftRadius="50dp"
+            android:topRightRadius="50dp" />
 
     </shape></item>
-
 </selector>
