@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Сalculator</string>
+    <string name="buttom_1">1</string>
+    <string name="buttom_dot">.</string>
+    <string name="button_4">4</string>
+    <string name="buttom_7">7</string>
 </resources>
