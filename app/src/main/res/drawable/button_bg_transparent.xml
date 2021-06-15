@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- я же прописал black, почему в макете цвет фиолетовый? -->
 
     <item><shape>
         <stroke
