@@ -10,15 +10,15 @@
     <!-- Если пытаюсь вынести в ресурсы значение bias, студия просто зависает, так что это не считается за хардкод-->
     <!-- Размер TextView задал через режим эльфов, не понял как это сделать в коде так, что выравнивалось по направляющем. Как указать ширину до направляющих?. -->
     <TextView
+        android:id="@+id/show_result"
         android:layout_width="392dp"
         android:layout_height="120dp"
         android:background="@drawable/button_bg_transparent"
-        app:layout_constraintBottom_toTopOf="@+id/button_2"
+        app:layout_constraintBottom_toTopOf="@+id/button_delete_all"
         app:layout_constraintDimensionRatio="h,3:1"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="@id/button_delete"
+        app:layout_constraintStart_toStartOf="@id/button_delete_all"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
@@ -36,9 +36,10 @@
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toStartOf="@+id/button_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_delete_all"
         app:layout_constraintVertical_bias="0.8"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+ />
 
     <Button
         android:id="@+id/button_4"
@@ -102,9 +103,10 @@
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toStartOf="@+id/button_3"
         app:layout_constraintStart_toEndOf="@id/button_1"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_delete_all"
         app:layout_constraintVertical_bias="0.8"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+ />
 
     <Button
         android:id="@+id/button_5"
@@ -168,9 +170,10 @@
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toStartOf="@+id/button_plus"
         app:layout_constraintStart_toEndOf="@id/button_2"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_delete"
         app:layout_constraintVertical_bias="0.8"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+/>
 
     <Button
         android:id="@+id/button_6"
@@ -234,9 +237,10 @@
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/button_3"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_delete"
         app:layout_constraintVertical_bias="0.8"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+ />
 
     <Button
         android:id="@+id/button_minus"
@@ -286,23 +290,39 @@
         app:layout_constraintStart_toEndOf="@+id/button_equals"
         app:layout_constraintTop_toBottomOf="@+id/button_composition" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+    <Button
+        android:id="@+id/button_delete_all"
+        style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@id/button_4"
-        app:layout_constraintGuide_end="402dp"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_margin="@dimen/margin_all"
+        android:background="@drawable/button_pressed"
+        android:text="@string/button_delete_all"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/button_1"
+        app:layout_constraintEnd_toStartOf="@+id/button_delete"
+        app:layout_constraintStart_toStartOf="@id/show_result"
+        app:layout_constraintTop_toBottomOf="@id/show_result"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
+    <Button
+        android:id="@+id/button_delete"
+        style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="8dp"
-        app:layout_constraintStart_toEndOf="@id/button_minus"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_margin="@dimen/margin_all"
+        android:background="@drawable/button_pressed"
+        android:text="@string/button_delete"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/button_plus"
+        app:layout_constraintEnd_toEndOf="@id/show_result"
+        app:layout_constraintStart_toEndOf="@id/button_delete_all"
+        app:layout_constraintTop_toBottomOf="@id/show_result"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
