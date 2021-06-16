@@ -18,4 +18,6 @@
     <string name="button_division">/</string>
     <string name="button_delete">⇐</string>
     <string name="button_delete_all">AC</string>
+    <string name="button_percent">%</string>
+    <string name="button_root">√</string>
 </resources>

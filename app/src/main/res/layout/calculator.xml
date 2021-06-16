@@ -14,9 +14,8 @@
         android:layout_width="392dp"
         android:layout_height="120dp"
         android:background="@drawable/button_bg_transparent"
-        app:layout_constraintBottom_toTopOf="@+id/button_delete_all"
         app:layout_constraintDimensionRatio="h,3:1"
-        app:layout_constraintEnd_toEndOf="@id/button_delete"
+        app:layout_constraintEnd_toEndOf="@id/button_root"
         app:layout_constraintStart_toStartOf="@id/button_delete_all"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
@@ -36,10 +35,7 @@
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toStartOf="@+id/button_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_delete_all"
-        app:layout_constraintVertical_bias="0.8"
-        app:layout_constraintVertical_chainStyle="packed"
- />
+        app:layout_constraintTop_toBottomOf="@id/button_delete_all" />
 
     <Button
         android:id="@+id/button_4"
@@ -103,10 +99,7 @@
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toStartOf="@+id/button_3"
         app:layout_constraintStart_toEndOf="@id/button_1"
-        app:layout_constraintTop_toBottomOf="@id/button_delete_all"
-        app:layout_constraintVertical_bias="0.8"
-        app:layout_constraintVertical_chainStyle="packed"
- />
+        app:layout_constraintTop_toBottomOf="@id/button_delete" />
 
     <Button
         android:id="@+id/button_5"
@@ -170,9 +163,8 @@
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toStartOf="@+id/button_plus"
         app:layout_constraintStart_toEndOf="@id/button_2"
-        app:layout_constraintTop_toBottomOf="@id/button_delete"
-        app:layout_constraintVertical_bias="0.8"
-        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/button_percent"
+
 />
 
     <Button
@@ -237,9 +229,7 @@
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/button_3"
-        app:layout_constraintTop_toBottomOf="@id/button_delete"
-        app:layout_constraintVertical_bias="0.8"
-        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/button_root"
  />
 
     <Button
@@ -294,33 +284,77 @@
         android:id="@+id/button_delete_all"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/aspect_ratio"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_delete_all"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
+        app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintBottom_toTopOf="@+id/button_1"
         app:layout_constraintEnd_toStartOf="@+id/button_delete"
-        app:layout_constraintStart_toStartOf="@id/show_result"
-        app:layout_constraintTop_toBottomOf="@id/show_result"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/show_result"
+        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintVertical_chainStyle="packed"/>
 
     <Button
         android:id="@+id/button_delete"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/aspect_ratio"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_delete"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_plus"
-        app:layout_constraintEnd_toEndOf="@id/show_result"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toTopOf="@+id/button_2"
+        app:layout_constraintEnd_toStartOf="@id/button_percent"
         app:layout_constraintStart_toEndOf="@id/button_delete_all"
-        app:layout_constraintTop_toBottomOf="@id/show_result"/>
+        app:layout_constraintTop_toBottomOf="@id/show_result"
+        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <Button
+        android:id="@+id/button_percent"
+        style="@style/Animation.Design.BottomSheetDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/aspect_ratio"
+        android:layout_margin="@dimen/margin_all"
+        android:background="@drawable/button_pressed"
+        android:text="@string/button_percent"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size"
+        app:backgroundTint="@null"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toTopOf="@+id/button_3"
+        app:layout_constraintEnd_toStartOf="@id/button_root"
+        app:layout_constraintStart_toEndOf="@id/button_delete"
+        app:layout_constraintTop_toBottomOf="@id/show_result"
+        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <Button
+        android:id="@+id/button_root"
+        style="@style/Animation.Design.BottomSheetDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/aspect_ratio"
+        android:layout_margin="@dimen/margin_all"
+        android:background="@drawable/button_pressed"
+        android:text="@string/button_root"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size"
+        app:backgroundTint="@null"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toTopOf="@+id/button_plus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_percent"
+        app:layout_constraintTop_toBottomOf="@id/show_result"
+        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintVertical_chainStyle="packed"/>
 
 
 
