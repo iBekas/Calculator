@@ -4,4 +4,5 @@
     <dimen name="aspect_ratio">0dp</dimen>
     <dimen name="corners_radius">8dp</dimen>
     <dimen name="margin_all">5dp</dimen>
+    <dimen name="margin_top_textView">40dp</dimen>
 </resources>
