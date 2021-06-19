@@ -20,4 +20,5 @@
     <string name="button_delete_all">AC</string>
     <string name="button_percent">%</string>
     <string name="button_root">√</string>
+    <string name="zero_on_field">0</string>
 </resources>

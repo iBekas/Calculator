@@ -5,4 +5,5 @@
     <dimen name="corners_radius">8dp</dimen>
     <dimen name="margin_all">5dp</dimen>
     <dimen name="margin_top_textView">40dp</dimen>
+    <dimen name="text_size_on_field">60sp</dimen>
 </resources>
