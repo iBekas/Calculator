@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,26 +8,22 @@
     android:layout_height="match_parent"
     android:background="#55FFFFFF">
 
-
-    <!-- Если пытаюсь вынести в ресурсы значение bias, студия просто зависает, так что это не считается за хардкод-->
-    <!-- Размер TextView задал через режим эльфов, не понял как это сделать в коде так, что выравнивалось по направляющем. Как указать ширину до направляющих?. -->
     <TextView
         android:id="@+id/show_result"
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_height="120dp"
+        android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_bg_transparent"
-        app:layout_constraintDimensionRatio="h,3:1"
         app:layout_constraintEnd_toEndOf="@id/button_root"
         app:layout_constraintStart_toStartOf="@id/button_delete_all"
-        app:layout_constraintBottom_toTopOf="d"
-        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/button_delete_all"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_delete_all"
@@ -35,103 +33,104 @@
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintBottom_toTopOf="@+id/button_1"
         app:layout_constraintEnd_toStartOf="@+id/button_delete"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/show_result"
-        />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/button_1"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_1"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_4"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toTopOf="@+id/button_4"
         app:layout_constraintEnd_toStartOf="@+id/button_2"
-        app:layout_constraintStart_toStartOf="@id/button_delete_all"
-        app:layout_constraintTop_toBottomOf="@id/button_delete_all" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_delete_all" />
 
     <Button
         android:id="@+id/button_4"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_4"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_7"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toTopOf="@+id/button_7"
         app:layout_constraintEnd_toStartOf="@+id/button_5"
-        app:layout_constraintStart_toStartOf="@id/button_1"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_1" />
 
     <Button
         android:id="@+id/button_7"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_7"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_dot"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toTopOf="@+id/button_dot"
         app:layout_constraintEnd_toStartOf="@+id/button_8"
-        app:layout_constraintStart_toStartOf="@id/button_4"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_4" />
 
     <Button
         android:id="@+id/button_dot"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_dot"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_0"
-        app:layout_constraintStart_toStartOf="@id/button_7"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_7" />
 
     <Button
         android:id="@+id/button_2"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_2"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_5"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toTopOf="@+id/button_5"
         app:layout_constraintEnd_toStartOf="@+id/button_3"
-        app:layout_constraintStart_toEndOf="@id/button_1"
-        app:layout_constraintTop_toBottomOf="@id/button_delete" />
+        app:layout_constraintStart_toEndOf="@+id/button_1"
+        app:layout_constraintTop_toBottomOf="@+id/button_delete" />
 
     <Button
         android:id="@+id/button_5"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_5"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_8"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toTopOf="@+id/button_8"
         app:layout_constraintEnd_toStartOf="@+id/button_6"
         app:layout_constraintStart_toEndOf="@+id/button_4"
         app:layout_constraintTop_toBottomOf="@+id/button_2" />
@@ -139,15 +138,15 @@
     <Button
         android:id="@+id/button_8"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_8"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_0"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toTopOf="@+id/button_0"
         app:layout_constraintEnd_toStartOf="@+id/button_9"
         app:layout_constraintStart_toEndOf="@+id/button_7"
         app:layout_constraintTop_toBottomOf="@+id/button_5" />
@@ -155,15 +154,15 @@
     <Button
         android:id="@+id/button_0"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_0"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_equals"
         app:layout_constraintStart_toEndOf="@+id/button_dot"
         app:layout_constraintTop_toBottomOf="@+id/button_8" />
@@ -171,33 +170,31 @@
     <Button
         android:id="@+id/button_3"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_3"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_6"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toTopOf="@+id/button_6"
         app:layout_constraintEnd_toStartOf="@+id/button_plus"
-        app:layout_constraintStart_toEndOf="@id/button_2"
-        app:layout_constraintTop_toBottomOf="@id/button_percent"
-
-/>
+        app:layout_constraintStart_toEndOf="@+id/button_2"
+        app:layout_constraintTop_toBottomOf="@+id/button_percent" />
 
     <Button
         android:id="@+id/button_6"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_6"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_9"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toTopOf="@+id/button_9"
         app:layout_constraintEnd_toStartOf="@+id/button_minus"
         app:layout_constraintStart_toEndOf="@+id/button_5"
         app:layout_constraintTop_toBottomOf="@+id/button_3" />
@@ -205,15 +202,15 @@
     <Button
         android:id="@+id/button_9"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_9"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_equals"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toTopOf="@+id/button_equals"
         app:layout_constraintEnd_toStartOf="@+id/button_composition"
         app:layout_constraintStart_toEndOf="@+id/button_8"
         app:layout_constraintTop_toBottomOf="@+id/button_6" />
@@ -221,15 +218,15 @@
     <Button
         android:id="@+id/button_equals"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_equals"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_division"
         app:layout_constraintStart_toEndOf="@+id/button_0"
         app:layout_constraintTop_toBottomOf="@+id/button_9" />
@@ -237,74 +234,72 @@
     <Button
         android:id="@+id/button_plus"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_plus"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_minus"
         app:layout_constraintDimensionRatio="h,1:1"
-        app:layout_constraintEnd_toEndOf="@id/button_root"
-        app:layout_constraintStart_toEndOf="@id/button_3"
-        app:layout_constraintTop_toBottomOf="@id/button_root"
- />
+        app:layout_constraintBottom_toTopOf="@+id/button_minus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_3"
+        app:layout_constraintTop_toBottomOf="@+id/button_root" />
 
     <Button
         android:id="@+id/button_minus"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_minus"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_composition"
         app:layout_constraintDimensionRatio="h,1:1"
-        app:layout_constraintEnd_toEndOf="@id/button_plus"
+        app:layout_constraintBottom_toTopOf="@+id/button_composition"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_6"
         app:layout_constraintTop_toBottomOf="@+id/button_plus" />
 
     <Button
         android:id="@+id/button_composition"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_composition"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button_division"
         app:layout_constraintDimensionRatio="h,1:1"
-        app:layout_constraintEnd_toEndOf="@id/button_minus"
+        app:layout_constraintBottom_toTopOf="@+id/button_division"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_9"
         app:layout_constraintTop_toBottomOf="@+id/button_minus" />
 
     <Button
         android:id="@+id/button_division"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_division"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="h,1:1"
-        app:layout_constraintEnd_toEndOf="@id/button_composition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_equals"
         app:layout_constraintTop_toBottomOf="@+id/button_composition" />
-
 
     <Button
         android:id="@+id/button_delete"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_delete"
@@ -313,16 +308,16 @@
         app:backgroundTint="@null"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintBottom_toTopOf="@+id/button_2"
-        app:layout_constraintEnd_toStartOf="@id/button_percent"
-        app:layout_constraintStart_toEndOf="@id/button_delete_all"
+        app:layout_constraintEnd_toStartOf="@+id/button_percent"
+        app:layout_constraintStart_toEndOf="@+id/button_delete_all"
         app:layout_constraintTop_toBottomOf="@id/show_result"
-/>
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/button_percent"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_percent"
@@ -331,16 +326,16 @@
         app:backgroundTint="@null"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintBottom_toTopOf="@+id/button_3"
-        app:layout_constraintEnd_toStartOf="@id/button_root"
-        app:layout_constraintStart_toEndOf="@id/button_delete"
+        app:layout_constraintEnd_toStartOf="@+id/button_root"
+        app:layout_constraintStart_toEndOf="@+id/button_delete"
         app:layout_constraintTop_toBottomOf="@id/show_result"
-/>
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/button_root"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/aspect_ratio"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_all"
         android:background="@drawable/button_pressed"
         android:text="@string/button_root"
@@ -349,12 +344,9 @@
         app:backgroundTint="@null"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintBottom_toTopOf="@+id/button_plus"
-        app:layout_constraintEnd_toEndOf="@id/show_result"
-        app:layout_constraintStart_toEndOf="@id/button_percent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_percent"
         app:layout_constraintTop_toBottomOf="@id/show_result"
-/>
-
-
-
+        app:layout_constraintVertical_chainStyle="packed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
