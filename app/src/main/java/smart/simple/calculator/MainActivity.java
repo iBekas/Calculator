@@ -15,63 +15,156 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView calcText;
     private StringBuilder entryField = new StringBuilder();
 
+    private Button buttonZero;
+    private Button buttonOne;
+    private Button buttonTwo;
+    private Button buttonThree;
+    private Button buttonFour;
+    private Button buttonFive;
+    private Button buttonSix;
+    private Button buttonSeven;
+    private Button buttonEight;
+    private Button buttonNine;
+    private Button buttonPlus;
+    private Button buttonMinus;
+    private Button buttonComposition;
+    private Button buttonDivision;
+    private Button buttonRoot;
+    private Button buttonPercent;
+    private Button buttonDot;
+    private Button buttonDelete;
+    private Button buttonDeleteAll;
+    private Button buttonEquals;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        calcText = findViewById(R.id.show_result);
-        Button buttonZero = findViewById(R.id.button_0);
-        Button buttonOne = findViewById(R.id.button_1);
-        Button buttonTwo = findViewById(R.id.button_2);
-        Button buttonPlus = findViewById(R.id.button_plus);
-        buttonZero.setOnClickListener(this);
-        buttonOne.setOnClickListener(this);
-        buttonTwo.setOnClickListener(this);
-        buttonPlus.setOnClickListener(this);
+        initButtonAndText();
+        listenerButton();
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_0:
-                entryField.append("0");
-                calcText.setText(entryField.toString());
+                setTextOnField(0);
                 break;
             case R.id.button_1:
-                entryField.append(1);
-                calcText.setText(entryField.toString());
+                setTextOnField(1);
                 break;
             case R.id.button_2:
-                entryField.append(2);
-                calcText.setText(entryField.toString());
+                setTextOnField(2);
+                break;
+            case R.id.button_3:
+                setTextOnField(3);
+                break;
+            case R.id.button_4:
+                setTextOnField(4);
+                break;
+            case R.id.button_5:
+                setTextOnField(5);
+                break;
+            case R.id.button_6:
+                setTextOnField(6);
+                break;
+            case R.id.button_7:
+                setTextOnField(7);
+                break;
+            case R.id.button_8:
+                setTextOnField(8);
+                break;
+            case R.id.button_9:
+                setTextOnField(9);
                 break;
             case R.id.button_plus:
-                entryField.append("+");
-                calcText.setText(entryField.toString());
+                setTextOnField('+');
                 break;
+            case R.id.button_minus:
+                setTextOnField('-');
+                break;
+            case R.id.button_composition:
+                setTextOnField('×');
+                break;
+            case R.id.button_division:
+                setTextOnField('/');
+                break;
+            case R.id.button_dot:
+                setTextOnField('.');
+                break;
+            case R.id.button_root:
+                setTextOnField('√');
+                break;
+            case R.id.button_percent:
+                setTextOnField('%');
+                break;
+//            case R.id.button_delete:
+//
+//                break;
+//            case R.id.button_delete_all:
+//
+//                break;
+//            case R.id.button_equals:
+//
+//                break;
         }
     }
 
-//    private void initButtonAndText(){
-//        Button buttonZero = findViewById(R.id.button_0);
-//        Button buttonOne = findViewById(R.id.button_1);
-//        Button buttonTwo = findViewById(R.id.button_2);
-//        Button buttonThree = findViewById(R.id.button_3);
-//        Button buttonFour = findViewById(R.id.button_4);
-//        Button buttonFive = findViewById(R.id.button_5);
-//        Button buttonSix = findViewById(R.id.button_6);
-//        Button buttonSeven = findViewById(R.id.button_7);
-//        Button buttonEight = findViewById(R.id.button_8);
-//        Button buttonNine = findViewById(R.id.button_9);
-//        Button buttonPlus = findViewById(R.id.button_plus);
-//        Button buttonMinus = findViewById(R.id.button_minus);
-//        Button buttonComposition = findViewById(R.id.button_composition);
-//        Button buttonDivision = findViewById(R.id.button_division);
-//        Button buttonRoot = findViewById(R.id.button_root);
-//        Button buttonPercent = findViewById(R.id.button_percent);
-//        Button buttonDot = findViewById(R.id.button_dot);
-//        Button buttonDelete = findViewById(R.id.button_delete);
-//        Button buttonDeleteAll = findViewById(R.id.button_delete_all);
-//        calcText = findViewById(R.id.show_result);
-//    }
+    private void initButtonAndText(){
+        buttonZero = findViewById(R.id.button_0);
+        buttonOne = findViewById(R.id.button_1);
+        buttonTwo = findViewById(R.id.button_2);
+        buttonThree = findViewById(R.id.button_3);
+        buttonFour = findViewById(R.id.button_4);
+        buttonFive = findViewById(R.id.button_5);
+        buttonSix = findViewById(R.id.button_6);
+        buttonSeven = findViewById(R.id.button_7);
+        buttonEight = findViewById(R.id.button_8);
+        buttonNine = findViewById(R.id.button_9);
+        buttonPlus = findViewById(R.id.button_plus);
+        buttonMinus = findViewById(R.id.button_minus);
+        buttonComposition = findViewById(R.id.button_composition);
+        buttonDivision = findViewById(R.id.button_division);
+        buttonRoot = findViewById(R.id.button_root);
+        buttonPercent = findViewById(R.id.button_percent);
+        buttonDot = findViewById(R.id.button_dot);
+        buttonDelete = findViewById(R.id.button_delete);
+        buttonDeleteAll = findViewById(R.id.button_delete_all);
+        buttonEquals = findViewById(R.id.button_delete_all);
+        calcText = findViewById(R.id.show_result);
+    }
+
+    private void listenerButton(){
+        buttonZero.setOnClickListener(this);
+        buttonOne.setOnClickListener(this);
+        buttonTwo.setOnClickListener(this);
+        buttonThree.setOnClickListener(this);
+        buttonFour.setOnClickListener(this);
+        buttonFive.setOnClickListener(this);
+        buttonSix.setOnClickListener(this);
+        buttonSeven.setOnClickListener(this);
+        buttonEight.setOnClickListener(this);
+        buttonNine.setOnClickListener(this);
+        buttonPlus.setOnClickListener(this);
+        buttonMinus.setOnClickListener(this);
+        buttonComposition.setOnClickListener(this);
+        buttonDivision.setOnClickListener(this);
+        buttonRoot.setOnClickListener(this);
+        buttonPercent.setOnClickListener(this);
+        buttonDot.setOnClickListener(this);
+        buttonDelete.setOnClickListener(this);
+        buttonDeleteAll.setOnClickListener(this);
+        buttonEquals.setOnClickListener(this);
+    }
+
+    private void setTextOnField(int number){
+        entryField.append(number);
+        calcText.setText(entryField.toString());
+    }
+
+    private void setTextOnField(char operation){
+        entryField.append(operation);
+        calcText.setText(entryField.toString());
+    }
+
 }
