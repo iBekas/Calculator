@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 import android.widget.TextView;
 
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -98,12 +96,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button_percent:
                 setTextOnField('%');
                 break;
-//            case R.id.button_delete:
-//
-//                break;
-//            case R.id.button_delete_all:
-//
-//                break;
+            case R.id.button_delete:
+                if (entryField.length() != 0) {
+                    entryField.deleteCharAt(entryField.length()-1);
+                }
+                calcText.setText(entryField.toString());
+                break;
+            case R.id.button_delete_all:
+                entryField.delete(0,entryField.length());
+                calcText.setText(entryField.toString());
+                break;
 //            case R.id.button_equals:
 //
 //                break;
