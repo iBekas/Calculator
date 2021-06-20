@@ -1,8 +1,10 @@
 package smart.simple.calculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView calcText;
     private StringBuilder entryField = new StringBuilder();
+    private static final String KEY = "KeyValues";
 
     private Button buttonZero;
     private Button buttonOne;
@@ -174,4 +177,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calcText.setText(entryField.toString());
     }
 
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle instanceState) {
+        super.onSaveInstanceState(instanceState);
+        instanceState.putString(KEY, entryField.toString());
+    }
+
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
+        super.onRestoreInstanceState(instanceState);
+        calcText.setText(instanceState.getString(KEY));
+    }
 }
