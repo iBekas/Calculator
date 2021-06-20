@@ -39,6 +39,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initButtonAndText();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         listenerButton();
     }
 
