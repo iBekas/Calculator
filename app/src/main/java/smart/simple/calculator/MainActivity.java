@@ -8,13 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.io.CharArrayWriter;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView calcText;
-    private StringBuilder entryField = new StringBuilder();
+    private SetTextOnField memory = new SetTextOnField();
     private static final String KEY = "KeyValues";
 
     private Button buttonZero;
@@ -55,61 +54,80 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_0:
-                setTextOnField(0);
+                memory.setTextOnField(0);
+                showField();
                 break;
             case R.id.button_1:
-                setTextOnField(1);
+                memory.setTextOnField(1);
+                showField();
                 break;
             case R.id.button_2:
-                setTextOnField(2);
+                memory.setTextOnField(2);
+                showField();
                 break;
             case R.id.button_3:
-                setTextOnField(3);
+                memory.setTextOnField(3);
+                showField();
                 break;
             case R.id.button_4:
-                setTextOnField(4);
+                memory.setTextOnField(4);
+                showField();
                 break;
             case R.id.button_5:
-                setTextOnField(5);
+                memory.setTextOnField(5);
+                showField();
                 break;
             case R.id.button_6:
-                setTextOnField(6);
+                memory.setTextOnField(6);
+                showField();
                 break;
             case R.id.button_7:
-                setTextOnField(7);
+                memory.setTextOnField(7);
+                showField();
                 break;
             case R.id.button_8:
-                setTextOnField(8);
+                memory.setTextOnField(8);
+                showField();
                 break;
             case R.id.button_9:
-                setTextOnField(9);
+                memory.setTextOnField(9);
+                showField();
                 break;
             case R.id.button_plus:
-                setTextOnField('+');
+                memory.setTextOnField('+');
+                showField();
                 break;
             case R.id.button_minus:
-                setTextOnField('-');
+                memory.setTextOnField('-');
+                showField();
                 break;
             case R.id.button_composition:
-                setTextOnField('×');
+                memory.setTextOnField('×');
+                showField();
                 break;
             case R.id.button_division:
-                setTextOnField('/');
+                memory.setTextOnField('/');
+                showField();
                 break;
             case R.id.button_dot:
-                setTextOnField('.');
+                memory.setTextOnField('.');
+                showField();
                 break;
             case R.id.button_root:
-                setTextOnField('√');
+                memory.setTextOnField('√');
+                showField();
                 break;
             case R.id.button_percent:
-                setTextOnField('%');
+                memory.setTextOnField('%');
+                showField();
                 break;
             case R.id.button_delete:
-                deleteLast();
+                memory.deleteLast();
+                showField();
                 break;
             case R.id.button_delete_all:
-                deleteAll();
+                memory.deleteAll();
+                showField();
                 break;
 //            case R.id.button_equals:
 //
@@ -164,32 +182,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonEquals.setOnClickListener(this);
     }
 
-    private void setTextOnField(int number){
-        entryField.append(number);
-        calcText.setText(entryField.toString());
+    private void showField(){
+        calcText.setText(memory.entryField.toString());
     }
 
-    private void setTextOnField(char operation){
-        entryField.append(operation);
-        calcText.setText(entryField.toString());
-    }
-
-    private void deleteLast(){
-        if (entryField.length() != 0) {
-            entryField.deleteCharAt(entryField.length()-1);
-        }
-        calcText.setText(entryField.toString());
-    }
-
-    private void deleteAll(){
-        entryField.delete(0,entryField.length());
-        calcText.setText(entryField.toString());
-    }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle instanceState) {
         super.onSaveInstanceState(instanceState);
-        instanceState.putString(KEY, entryField.toString());
+        instanceState.putString(KEY, memory.entryField.toString());
     }
 
 
