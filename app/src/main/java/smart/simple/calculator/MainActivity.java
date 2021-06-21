@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,9 +11,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    static TextView calcText;
-    static StringBuilder entryField = new StringBuilder();
+    TextView calcText;
+    StringBuilder entryField = new StringBuilder();
     private static final String KEY = "KeyValues";
+    private SetTextOnField text = new SetTextOnField();
 
     private Button buttonZero;
     private Button buttonOne;
@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        SetTextOnField text = new SetTextOnField();
         switch (v.getId()){
             case R.id.button_0:
                 text.setTextOnField(0);
@@ -106,14 +105,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 text.setTextOnField('%');
                 break;
             case R.id.button_delete:
-                if (entryField.length() != 0) {
-                    entryField.deleteCharAt(entryField.length()-1);
-                }
-                calcText.setText(entryField.toString());
+                text.deleteLast();
                 break;
             case R.id.button_delete_all:
-                entryField.delete(0,entryField.length());
-                calcText.setText(entryField.toString());
+                text.deleteAll();
                 break;
 //            case R.id.button_equals:
 //
