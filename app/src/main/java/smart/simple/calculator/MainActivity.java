@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private TextView calcText;
-    private StringBuilder entryField = new StringBuilder();
+    static TextView calcText;
+    static StringBuilder entryField = new StringBuilder();
     private static final String KEY = "KeyValues";
 
     private Button buttonZero;
@@ -52,57 +52,58 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        SetTextOnField text = new SetTextOnField();
         switch (v.getId()){
             case R.id.button_0:
-                setTextOnField(0);
+                text.setTextOnField(0);
                 break;
             case R.id.button_1:
-                setTextOnField(1);
+                text.setTextOnField(1);
                 break;
             case R.id.button_2:
-                setTextOnField(2);
+                text.setTextOnField(2);
                 break;
             case R.id.button_3:
-                setTextOnField(3);
+                text.setTextOnField(3);
                 break;
             case R.id.button_4:
-                setTextOnField(4);
+                text.setTextOnField(4);
                 break;
             case R.id.button_5:
-                setTextOnField(5);
+                text.setTextOnField(5);
                 break;
             case R.id.button_6:
-                setTextOnField(6);
+                text.setTextOnField(6);
                 break;
             case R.id.button_7:
-                setTextOnField(7);
+                text.setTextOnField(7);
                 break;
             case R.id.button_8:
-                setTextOnField(8);
+                text.setTextOnField(8);
                 break;
             case R.id.button_9:
-                setTextOnField(9);
+                text.setTextOnField(9);
                 break;
             case R.id.button_plus:
-                setTextOnField('+');
+                text.setTextOnField('+');
                 break;
             case R.id.button_minus:
-                setTextOnField('-');
+                text.setTextOnField('-');
                 break;
             case R.id.button_composition:
-                setTextOnField('×');
+                text.setTextOnField('×');
                 break;
             case R.id.button_division:
-                setTextOnField('/');
+                text.setTextOnField('/');
                 break;
             case R.id.button_dot:
-                setTextOnField('.');
+                text.setTextOnField('.');
                 break;
             case R.id.button_root:
-                setTextOnField('√');
+                text.setTextOnField('√');
                 break;
             case R.id.button_percent:
-                setTextOnField('%');
+                text.setTextOnField('%');
                 break;
             case R.id.button_delete:
                 if (entryField.length() != 0) {
@@ -166,17 +167,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDeleteAll.setOnClickListener(this);
         buttonEquals.setOnClickListener(this);
     }
-
-    private void setTextOnField(int number){
-        entryField.append(number);
-        calcText.setText(entryField.toString());
-    }
-
-    private void setTextOnField(char operation){
-        entryField.append(operation);
-        calcText.setText(entryField.toString());
-    }
-
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle instanceState) {
