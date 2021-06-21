@@ -8,13 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.CharArrayWriter;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    TextView calcText;
-    StringBuilder entryField = new StringBuilder();
+    private TextView calcText;
+    private StringBuilder entryField = new StringBuilder();
     private static final String KEY = "KeyValues";
-    private SetTextOnField text = new SetTextOnField();
 
     private Button buttonZero;
     private Button buttonOne;
@@ -54,61 +55,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_0:
-                text.setTextOnField(0);
+                setTextOnField(0);
                 break;
             case R.id.button_1:
-                text.setTextOnField(1);
+                setTextOnField(1);
                 break;
             case R.id.button_2:
-                text.setTextOnField(2);
+                setTextOnField(2);
                 break;
             case R.id.button_3:
-                text.setTextOnField(3);
+                setTextOnField(3);
                 break;
             case R.id.button_4:
-                text.setTextOnField(4);
+                setTextOnField(4);
                 break;
             case R.id.button_5:
-                text.setTextOnField(5);
+                setTextOnField(5);
                 break;
             case R.id.button_6:
-                text.setTextOnField(6);
+                setTextOnField(6);
                 break;
             case R.id.button_7:
-                text.setTextOnField(7);
+                setTextOnField(7);
                 break;
             case R.id.button_8:
-                text.setTextOnField(8);
+                setTextOnField(8);
                 break;
             case R.id.button_9:
-                text.setTextOnField(9);
+                setTextOnField(9);
                 break;
             case R.id.button_plus:
-                text.setTextOnField('+');
+                setTextOnField('+');
                 break;
             case R.id.button_minus:
-                text.setTextOnField('-');
+                setTextOnField('-');
                 break;
             case R.id.button_composition:
-                text.setTextOnField('×');
+                setTextOnField('×');
                 break;
             case R.id.button_division:
-                text.setTextOnField('/');
+                setTextOnField('/');
                 break;
             case R.id.button_dot:
-                text.setTextOnField('.');
+                setTextOnField('.');
                 break;
             case R.id.button_root:
-                text.setTextOnField('√');
+                setTextOnField('√');
                 break;
             case R.id.button_percent:
-                text.setTextOnField('%');
+                setTextOnField('%');
                 break;
             case R.id.button_delete:
-                text.deleteLast();
+                deleteLast();
                 break;
             case R.id.button_delete_all:
-                text.deleteAll();
+                deleteAll();
                 break;
 //            case R.id.button_equals:
 //
@@ -161,6 +162,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDelete.setOnClickListener(this);
         buttonDeleteAll.setOnClickListener(this);
         buttonEquals.setOnClickListener(this);
+    }
+
+    private void setTextOnField(int number){
+        entryField.append(number);
+        calcText.setText(entryField.toString());
+    }
+
+    private void setTextOnField(char operation){
+        entryField.append(operation);
+        calcText.setText(entryField.toString());
+    }
+
+    private void deleteLast(){
+        if (entryField.length() != 0) {
+            entryField.deleteCharAt(entryField.length()-1);
+        }
+        calcText.setText(entryField.toString());
+    }
+
+    private void deleteAll(){
+        entryField.delete(0,entryField.length());
+        calcText.setText(entryField.toString());
     }
 
     @Override
