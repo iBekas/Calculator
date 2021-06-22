@@ -198,5 +198,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
         super.onRestoreInstanceState(instanceState);
         calcText.setText(instanceState.getString(KEY));
+        memory.entryField.append(instanceState.getString(KEY)); //временное решение
     }
 }

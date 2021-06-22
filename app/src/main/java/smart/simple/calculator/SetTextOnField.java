@@ -1,9 +1,13 @@
 package smart.simple.calculator;
 
-public class SetTextOnField {
-    StringBuilder entryField = new StringBuilder();
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    private static MainActivity access = new MainActivity();
+import java.util.ArrayList;
+import java.util.List;
+
+class SetTextOnField{ //  в данном случае я осознанно ограничиваю пакетом, если я не прав поправьте меня. Не вижу здесь надобности в других модификаторах.
+    StringBuilder entryField = new StringBuilder();
 
     void setTextOnField(int number){
         entryField.append(number);
@@ -23,4 +27,13 @@ public class SetTextOnField {
         entryField.delete(0,entryField.length());
     }
 
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public void writeToParcel(Parcel dest, int flags) {
+//
+//    }
 }
