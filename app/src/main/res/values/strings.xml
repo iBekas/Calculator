@@ -16,7 +16,7 @@
     <string name="button_minus">−</string>
     <string name="button_composition">×</string>
     <string name="button_division">/</string>
-    <string name="button_delete">⇐</string>
+    <string name="button_delete">⇚</string>
     <string name="button_delete_all">AC</string>
     <string name="button_percent">%</string>
     <string name="button_root">√</string>
