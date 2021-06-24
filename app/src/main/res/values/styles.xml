@@ -5,6 +5,14 @@
         <item name="android:layout_margin">@dimen/margin_all</item>
     </style>
 
+    <style name="ButtonCompatStyle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:layout_margin">@dimen/margin_all</item>
+        <item name="android:background">@drawable/button_pressed</item>
+        <item name="android:layout_marginStart">@dimen/margin_all</item>
+        <item name="android:layout_marginEnd">@dimen/margin_all</item>
+    </style>
+
 
 
 </resources>
