@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView calcText;
-    private SetTextOnField memory = new SetTextOnField();
+    private SetTextOnField memory;
     private static final String KEY = "KeyValues";
 
     private Button buttonZero;
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        memory = new SetTextOnField();
         initButtonAndText();
     }
 
