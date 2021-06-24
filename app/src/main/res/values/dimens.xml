@@ -6,4 +6,5 @@
     <dimen name="aspect_ratio">0dp</dimen>
     <dimen name="margin_top_textView">5dp</dimen>
     <dimen name="text_size_on_field">50sp</dimen>
+    <dimen name="layout_height">0dp</dimen>
 </resources>

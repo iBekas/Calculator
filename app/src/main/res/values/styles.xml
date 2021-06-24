@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ButtonStyle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:layout_margin">@dimen/margin_all</item>
+    </style>
+
+
+
+</resources>
