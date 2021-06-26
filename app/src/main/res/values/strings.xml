@@ -22,4 +22,6 @@
     <string name="button_root">√</string>
     <string name="zero_on_field">0</string>
     <string name="options">⚙️</string>
+    <string name="default_style">Супер стиль</string>
+    <string name="miracle_style">Чудо стиль</string>
 </resources>
