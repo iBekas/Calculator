@@ -4,4 +4,5 @@
     <dimen name="margin_top_textView">10dp</dimen>
     <dimen name="aspect_ratio">0dp</dimen>
     <dimen name="margin_all">0dp</dimen>
+    <dimen name="options_size">7sp</dimen>
 </resources>
