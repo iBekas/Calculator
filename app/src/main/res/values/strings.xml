@@ -24,4 +24,5 @@
     <string name="options">⚙️</string>
     <string name="default_style">Супер стиль</string>
     <string name="miracle_style">Чудо стиль</string>
+    <string name="night_style">Ночной стиль</string>
 </resources>

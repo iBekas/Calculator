@@ -1,8 +1,8 @@
 package smart.simple.calculator;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends Options implements View.OnClickListener{
 
     private TextView calcText;
     private SetTextOnField memory;
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonDelete;
     private Button buttonDeleteAll;
     private Button buttonEquals;
+    private Button buttonOptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +131,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 memory.deleteAll();
                 showField();
                 break;
+            case R.id.button_options:
+                Intent intent = new Intent(MainActivity.this, Options.class);
+                startActivity(intent);
+                break;
 //            case R.id.button_equals:
 //
 //                break;
@@ -158,6 +163,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDeleteAll = findViewById(R.id.button_delete_all);
         buttonEquals = findViewById(R.id.button_delete_all);
         calcText = findViewById(R.id.show_result);
+        buttonOptions = findViewById(R.id.button_options);
+
     }
 
     private void listenerButton(){
@@ -181,6 +188,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDelete.setOnClickListener(this);
         buttonDeleteAll.setOnClickListener(this);
         buttonEquals.setOnClickListener(this);
+        buttonOptions.setOnClickListener(this);
     }
 
     private void showField(){

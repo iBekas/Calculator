@@ -3,22 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Options"
-    android:gravity="center|start"
-    android:orientation="vertical">
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Options">
 
 
-    <androidx.appcompat.widget.AppCompatRadioButton
-        android:id="@+id/style_one"
-        android:textSize="@dimen/text_size"
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/default_style" />
+>
 
-    <androidx.appcompat.widget.AppCompatRadioButton
-        android:id="@+id/style_two"
-        android:textSize="@dimen/text_size"
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/style_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/default_style"
+            android:textSize="@dimen/text_size" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/style_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/miracle_style"
+            android:textSize="@dimen/text_size" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/style_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/night_style"
+            android:textSize="@dimen/text_size" />
+    </RadioGroup>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_back"
+        style="@style/ButtonCompatStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/miracle_style" />
+
+        android:text="BACK"/>
+
+
+
+
 </LinearLayout>
