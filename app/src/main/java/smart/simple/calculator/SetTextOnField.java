@@ -10,15 +10,13 @@ import java.util.List;
 
 class SetTextOnField implements Parcelable{ //  в данном случае я осознанно ограничиваю пакетом, если я не прав поправьте меня. Не вижу здесь надобности в других модификаторах.
     StringBuilder entryField;
-//    List<String> entryField;
 
     public SetTextOnField() {
         this.entryField = new StringBuilder();
-//        this.entryField = new ArrayList<>();
     }
 
     protected SetTextOnField(Parcel in) {
-        this.entryField = in.readString(); // AAAAAAAA!!!!
+        entryField = this.entryField.append(in.readString());
     }
 
     public static final Creator<SetTextOnField> CREATOR = new Creator<SetTextOnField>() {

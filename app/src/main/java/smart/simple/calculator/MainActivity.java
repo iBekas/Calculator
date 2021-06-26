@@ -191,14 +191,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onSaveInstanceState(@NonNull Bundle instanceState) {
         super.onSaveInstanceState(instanceState);
-        instanceState.putString(KEY, memory.entryField.toString());
+        instanceState.putParcelable(KEY, memory);
     }
 
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
         super.onRestoreInstanceState(instanceState);
-        calcText.setText(instanceState.getString(KEY));
-        memory.entryField.append(instanceState.getString(KEY)); //временное решение
+        memory = instanceState.getParcelable(KEY);
+        showField();
     }
 }
