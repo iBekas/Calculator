@@ -1,6 +1,7 @@
 package smart.simple.calculator;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 
 
 
-public class MainActivity extends Options implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView calcText;
     private SetTextOnField memory;

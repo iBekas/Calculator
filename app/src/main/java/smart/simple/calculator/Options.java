@@ -3,30 +3,45 @@ package smart.simple.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 
-public abstract class Options extends AppCompatActivity{
+public class Options extends AppCompatActivity implements View.OnClickListener{
 
-    private static final String NAME_SHARED_PREFERENCE = "KEY";
-
-    private static final String THEME = "THEME";
-
-    protected static final int FIRST_STYLE = 0;
-    protected static final int SECOND_STYLE = 1;
-    protected static final int THIRD_STYLE = 2;
-
-    private static Button back;
+    private RadioButton firstStyle;
+    private RadioButton secondStyle;
+    private RadioButton thirdStyle;
+    private Button back;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
+        initButton();
 
-//        back.findViewById(R.id.button_back);
-//        back.setOnClickListener(v -> {
-//            finish();
-//        });
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button_back:
+                finish();
+                break;
+        }
+
+    }
+
+
+    private void initButton() {
+        firstStyle.findViewById(R.id.style_one);
+        firstStyle.findViewById(R.id.style_two);
+        firstStyle.findViewById(R.id.style_three);
+        back.findViewById(R.id.button_back);
+    }
+
+    private void listenerButton(){
+        firstStyle.setOnLongClickListener(this);
+    }
 }
