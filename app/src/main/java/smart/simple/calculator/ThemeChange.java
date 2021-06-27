@@ -15,6 +15,7 @@ public abstract class ThemeChange extends AppCompatActivity {
     protected static final int FIRST_STYLE = 0;
     protected static final int SECOND_STYLE = 1;
     protected static final int THIRD_STYLE = 2;
+    protected int styleCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public abstract class ThemeChange extends AppCompatActivity {
         setTheme(getAppTheme(R.style.ThemeСalculator));
     }
 
-    private int getAppTheme(int codeStyle) {
+    int getAppTheme(int codeStyle) {
         return codeStyleToStyleId(getCodeStyle(codeStyle));
     }
 

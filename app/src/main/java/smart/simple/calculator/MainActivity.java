@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends Options implements View.OnClickListener{
 
     private TextView calcText;
     private SetTextOnField memory;
@@ -45,6 +45,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         memory = new SetTextOnField();
         initButtonAndText();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        setTheme(getAppTheme(styleCode));
+        recreate();
     }
 
     @Override

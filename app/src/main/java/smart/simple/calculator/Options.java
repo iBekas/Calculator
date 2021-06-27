@@ -29,14 +29,17 @@ public class Options extends ThemeChange implements View.OnClickListener{
                 break;
             case R.id.style_one:
                 setAppTheme(FIRST_STYLE);
+                styleCode = FIRST_STYLE;
                 recreate();
                 break;
             case R.id.style_two:
                 setAppTheme(SECOND_STYLE);
+                styleCode = SECOND_STYLE;
                 recreate();
                 break;
             case R.id.style_three:
                 setAppTheme(THIRD_STYLE);
+                styleCode = THIRD_STYLE;
                 recreate();
                 break;
         }
