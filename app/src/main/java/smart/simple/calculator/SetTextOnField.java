@@ -39,6 +39,10 @@ class SetTextOnField implements Parcelable{ //  в данном случае я 
         this.entryField.append(operation);
     }
 
+    void setTextOnField(String operation){
+        this.entryField.append(operation);
+    }
+
     void deleteLast(){
         if (this.entryField.length() != 0) {
             this.entryField.deleteCharAt(this.entryField.length()-1);

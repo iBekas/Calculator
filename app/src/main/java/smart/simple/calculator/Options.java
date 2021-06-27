@@ -18,6 +18,11 @@ public class Options extends ThemeChange implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
         initButton();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         listenerButton();
     }
 

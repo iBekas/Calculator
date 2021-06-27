@@ -58,6 +58,7 @@ public class MainActivity extends Options implements View.OnClickListener{
     protected void onResume() {
         super.onResume();
         listenerButton();
+        pasteText();
     }
 
     @Override
@@ -201,6 +202,16 @@ public class MainActivity extends Options implements View.OnClickListener{
 
     private void showField(){
         calcText.setText(memory.entryField.toString());
+    }
+
+    private void pasteText(){
+        Intent intent = getIntent();
+        String action = intent.getAction();
+
+        if(Intent.ACTION_SEND.endsWith(action)){
+//            buttonOptions.setText(intent.getStringExtra(Intent.EXTRA_TEXT));
+            memory.setTextOnField(intent.getStringExtra(Intent.EXTRA_TEXT));
+        }
     }
 
 
