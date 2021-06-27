@@ -207,10 +207,12 @@ public class MainActivity extends Options implements View.OnClickListener{
     private void pasteText(){
         Intent intent = getIntent();
         String action = intent.getAction();
+        String type = intent.getType();
 
-        if(Intent.ACTION_SEND.endsWith(action)){
+        if(Intent.ACTION_SEND.endsWith(action)&&type.equals("text/*")){
 //            buttonOptions.setText(intent.getStringExtra(Intent.EXTRA_TEXT));
             memory.setTextOnField(intent.getStringExtra(Intent.EXTRA_TEXT));
+            showField();
         }
     }
 
