@@ -7,15 +7,17 @@
         <item name="android:windowBackground">@drawable/blue_wall</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:textColorPrimary">@color/black</item>
+        <item name="radioButtonStyle">@color/black</item>
     </style>
 
     <style name="ThemeMiracle" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/turquoise</item>
         <item name="colorPrimaryVariant">@color/turquoise</item>
         <item name="colorOnPrimary">@color/turquoise</item>
-        <item name="android:windowBackground">@drawable/miracle</item>
+        <item name="android:windowBackground">@drawable/landscape</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:textColorPrimary">@color/turquoise</item>
+        <item name="radioButtonStyle">@color/turquoise</item>
     </style>
 
     <style name="ThemeNight" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
@@ -25,6 +27,7 @@
         <item name="android:windowBackground">@drawable/black_rain</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/yellow</item>
         <item name="android:textColorPrimary">@color/yellow</item>
+        <item name="radioButtonStyle">@color/yellow</item>
     </style>
 
 

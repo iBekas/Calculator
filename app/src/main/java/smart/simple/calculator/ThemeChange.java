@@ -32,7 +32,7 @@ public abstract class ThemeChange extends AppCompatActivity {
         return sharedPref.getInt(THEME, codeStyle);
     }
 
-    // Сохранение настроек
+
     protected void setAppTheme(int codeStyle) {
         SharedPreferences sharedPref = getSharedPreferences(NAME_SHARED_PREFERENCE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
