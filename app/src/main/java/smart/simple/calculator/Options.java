@@ -20,6 +20,7 @@ public class Options extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
         initButton();
+        listenerButton();
 
     }
 
@@ -35,13 +36,16 @@ public class Options extends AppCompatActivity implements View.OnClickListener{
 
 
     private void initButton() {
-        firstStyle.findViewById(R.id.style_one);
-        firstStyle.findViewById(R.id.style_two);
-        firstStyle.findViewById(R.id.style_three);
-        back.findViewById(R.id.button_back);
+        firstStyle = findViewById(R.id.style_one);
+        secondStyle = findViewById(R.id.style_two);
+        thirdStyle = findViewById(R.id.style_three);
+        back = findViewById(R.id.button_back);
     }
 
     private void listenerButton(){
-        firstStyle.setOnLongClickListener(this);
+        firstStyle.setOnClickListener(this);
+        secondStyle.setOnClickListener(this);
+        thirdStyle.setOnClickListener(this);
+        back.setOnClickListener(this);
     }
 }

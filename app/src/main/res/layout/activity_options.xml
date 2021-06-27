@@ -10,8 +10,7 @@
 
     <RadioGroup
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
->
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/style_one"
@@ -41,7 +40,6 @@
         style="@style/ButtonCompatStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="BACK"/>
 
 
