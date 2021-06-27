@@ -1,13 +1,11 @@
 package smart.simple.calculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 
-public class Options extends AppCompatActivity implements View.OnClickListener{
+public class Options extends ThemeChange implements View.OnClickListener{
 
     private RadioButton firstStyle;
     private RadioButton secondStyle;
@@ -21,7 +19,6 @@ public class Options extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_options);
         initButton();
         listenerButton();
-
     }
 
     @Override
@@ -29,6 +26,18 @@ public class Options extends AppCompatActivity implements View.OnClickListener{
         switch (v.getId()){
             case R.id.button_back:
                 finish();
+                break;
+            case R.id.style_one:
+                setAppTheme(FIRST_STYLE);
+                recreate();
+                break;
+            case R.id.style_two:
+                setAppTheme(SECOND_STYLE);
+                recreate();
+                break;
+            case R.id.style_three:
+                setAppTheme(THIRD_STYLE);
+                recreate();
                 break;
         }
 
