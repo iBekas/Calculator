@@ -133,7 +133,7 @@ public class MainActivity extends Options implements View.OnClickListener{
                 startActivity(intent);
                 break;
             case R.id.button_equals:
-                operationOnField(calculator.getEQUALS());
+                operationOnField(calculator.getEQUALS(), 0);
                 break;
         }
     }
@@ -151,6 +151,24 @@ public class MainActivity extends Options implements View.OnClickListener{
         calculator.clearNumber();
         showField();
     }
+
+    private void operationOnField(char operationAction, int x) {
+        memory.setTextOnField(operationAction);
+        if(calculator.getVal1()==0){
+            calculator.setVal1(Double.parseDouble(calculator.getNumber()));
+        } else {
+            calculator.setVal2(Double.parseDouble(calculator.getNumber()));
+        }
+        calcTextResult.setText(Double.toString(calculator.operation(calculator.getAction(), calculator.getVal1(), calculator.getVal2())));
+        calculator.setVal1(calculator.operation(calculator.getAction(), calculator.getVal1(), calculator.getVal2()));
+        calculator.setAction(operationAction);
+        calculator.clearNumber();
+        showField();
+        calcTextResult.setText("");
+        calcText.setText("");
+    }
+
+
 
     private void pushFieldAndResult(int num, String number) {
         memory.setTextOnField(num);
