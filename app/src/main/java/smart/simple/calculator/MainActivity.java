@@ -17,8 +17,8 @@ public class MainActivity extends Options implements View.OnClickListener {
     private TextView calcTextResult;
     private SetTextOnField memory;
     private Calculator calculator;
-    private Parcelable[] values;
-    private static final String KEY = "KeyValues";
+    private static final String KEY_TEXT_VIEW = "KeyValues";
+    private static final String KEY_SECOND_TEXT_VIEW = "KeyValuesTwo";
 
     private Button buttonZero;
     private Button buttonOne;
@@ -49,7 +49,6 @@ public class MainActivity extends Options implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         memory = new SetTextOnField();
         calculator = new Calculator();
-        values = new Parcelable[]{memory, calculator};
         initButtonAndText();
     }
 
@@ -249,14 +248,18 @@ public class MainActivity extends Options implements View.OnClickListener {
     @Override
     public void onSaveInstanceState(@NonNull Bundle instanceState) {
         super.onSaveInstanceState(instanceState);
-        instanceState.putParcelable(KEY, memory);
+        instanceState.putParcelable(KEY_TEXT_VIEW, memory);
+//        instanceState.putParcelable(KEY_SECOND_TEXT_VIEW, calculator);
     }
 
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
         super.onRestoreInstanceState(instanceState);
-        memory = instanceState.getParcelable(KEY);
+        memory = instanceState.getParcelable(KEY_TEXT_VIEW);
         showField();
+//        calculator = instanceState.getParcelable(KEY_SECOND_TEXT_VIEW);
+//        calcTextResult.setText(calculator.getNumber());
+
     }
 }
