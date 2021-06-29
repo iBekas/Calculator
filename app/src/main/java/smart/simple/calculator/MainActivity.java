@@ -69,43 +69,41 @@ public class MainActivity extends Options implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_0:
-                memory.setTextOnField(0);
-                showField();
+                pushFieldAndResult(0,"0");
                 break;
             case R.id.button_1:
-                memory.setTextOnField(1);
-                showField();
+                pushFieldAndResult(1,"1");
                 break;
             case R.id.button_2:
-                memory.setTextOnField(2);
+                pushFieldAndResult(2,"2");
                 showField();
                 break;
             case R.id.button_3:
-                memory.setTextOnField(3);
+                pushFieldAndResult(3,"3");
                 showField();
                 break;
             case R.id.button_4:
-                memory.setTextOnField(4);
+                pushFieldAndResult(4,"4");
                 showField();
                 break;
             case R.id.button_5:
-                memory.setTextOnField(5);
+                pushFieldAndResult(5,"5");
                 showField();
                 break;
             case R.id.button_6:
-                memory.setTextOnField(6);
+                pushFieldAndResult(6,"6");
                 showField();
                 break;
             case R.id.button_7:
-                memory.setTextOnField(7);
+                pushFieldAndResult(7,"7");
                 showField();
                 break;
             case R.id.button_8:
-                memory.setTextOnField(8);
+                pushFieldAndResult(8,"8");
                 showField();
                 break;
             case R.id.button_9:
-                memory.setTextOnField(9);
+                pushFieldAndResult(9,"9");
                 showField();
                 break;
             case R.id.button_plus:
@@ -152,6 +150,12 @@ public class MainActivity extends Options implements View.OnClickListener{
 //
 //                break;
         }
+    }
+
+    private void pushFieldAndResult(int num, String number) {
+        memory.setTextOnField(num);
+        calculator.setNumber(number);
+        showField();
     }
 
     private void initButtonAndText(){

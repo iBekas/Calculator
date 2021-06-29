@@ -16,9 +16,29 @@ public class Calculator {
     private final char ROOT = '√';
     private final char PERCENT = '%';
     private char action;
+    private String number = "";
+    private double val1;
+    private double val2;
+
 
     public Calculator() {
         this.action = getAction();
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public double getVal1() {
+        return val1;
+    }
+
+    public double getVal2() {
+        return val2;
     }
 
     public void setAction(char action) {
