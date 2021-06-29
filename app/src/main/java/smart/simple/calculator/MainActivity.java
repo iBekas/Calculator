@@ -249,7 +249,7 @@ public class MainActivity extends Options implements View.OnClickListener {
     public void onSaveInstanceState(@NonNull Bundle instanceState) {
         super.onSaveInstanceState(instanceState);
         instanceState.putParcelable(KEY_TEXT_VIEW, memory);
-//        instanceState.putParcelable(KEY_SECOND_TEXT_VIEW, calculator);
+        instanceState.putParcelable(KEY_SECOND_TEXT_VIEW, calculator);
     }
 
 
@@ -258,8 +258,8 @@ public class MainActivity extends Options implements View.OnClickListener {
         super.onRestoreInstanceState(instanceState);
         memory = instanceState.getParcelable(KEY_TEXT_VIEW);
         showField();
-//        calculator = instanceState.getParcelable(KEY_SECOND_TEXT_VIEW);
-//        calcTextResult.setText(calculator.getNumber());
+        calculator = instanceState.getParcelable(KEY_SECOND_TEXT_VIEW);
+        calcTextResult.setText(calculator.getNumber());
 
     }
 }
