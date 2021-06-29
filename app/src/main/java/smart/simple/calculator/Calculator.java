@@ -24,7 +24,7 @@ public class Calculator {
     public Calculator() {
         this.action = getAction();
         val1 = 0;
-        val2 =0;
+        val2 = 0;
     }
 
     public double operation(char action, double val1, double val2){

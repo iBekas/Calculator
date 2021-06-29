@@ -76,35 +76,27 @@ public class MainActivity extends Options implements View.OnClickListener{
                 break;
             case R.id.button_2:
                 pushFieldAndResult(2,"2");
-                showField();
                 break;
             case R.id.button_3:
                 pushFieldAndResult(3,"3");
-                showField();
                 break;
             case R.id.button_4:
                 pushFieldAndResult(4,"4");
-                showField();
                 break;
             case R.id.button_5:
                 pushFieldAndResult(5,"5");
-                showField();
                 break;
             case R.id.button_6:
                 pushFieldAndResult(6,"6");
-                showField();
                 break;
             case R.id.button_7:
                 pushFieldAndResult(7,"7");
-                showField();
                 break;
             case R.id.button_8:
                 pushFieldAndResult(8,"8");
-                showField();
                 break;
             case R.id.button_9:
                 pushFieldAndResult(9,"9");
-                showField();
                 break;
             case R.id.button_plus:
                 memory.setTextOnField(calculator.getPLUS());
@@ -132,8 +124,8 @@ public class MainActivity extends Options implements View.OnClickListener{
                 showField();
                 break;
             case R.id.button_dot:
-                memory.setTextOnField('.');
-                showField();
+                // TODO криво читает точку
+                pushFieldAndResult('.',".");
                 break;
             case R.id.button_root:
                 memory.setTextOnField(calculator.getROOT());
@@ -162,6 +154,12 @@ public class MainActivity extends Options implements View.OnClickListener{
     }
 
     private void pushFieldAndResult(int num, String number) {
+        memory.setTextOnField(num);
+        calculator.setNumber(number);
+        showField();
+    }
+
+    private void pushFieldAndResult(char num, String number) {
         memory.setTextOnField(num);
         calculator.setNumber(number);
         showField();
