@@ -99,41 +99,26 @@ public class MainActivity extends Options implements View.OnClickListener{
                 pushFieldAndResult(9,"9");
                 break;
             case R.id.button_plus:
-                memory.setTextOnField(calculator.getPLUS());
-                if(calculator.getVal1()==0){
-                    calculator.setVal1(Double.parseDouble(calculator.getNumber()));
-                } else {
-                    calculator.setVal2(Double.parseDouble(calculator.getNumber()));
-                }
-                calcTextResult.setText(Double.toString(calculator.operation(calculator.getAction(), calculator.getVal1(), calculator.getVal2())));
-                calculator.setVal1(calculator.operation(calculator.getAction(), calculator.getVal1(), calculator.getVal2()));
-                calculator.setAction(calculator.getPLUS());
-                calculator.setNumber("");
-                showField();
+                operationOnField(calculator.getPLUS());
                 break;
             case R.id.button_minus:
-                memory.setTextOnField(calculator.getMINUS());
-                showField();
+                operationOnField(calculator.getMINUS());
                 break;
             case R.id.button_composition:
-                memory.setTextOnField(calculator.getCOMPOSITION());
-                showField();
+                operationOnField(calculator.getCOMPOSITION());
                 break;
             case R.id.button_division:
-                memory.setTextOnField(calculator.getDIVISION());
-                showField();
+                operationOnField(calculator.getDIVISION());
                 break;
             case R.id.button_dot:
                 // TODO криво читает точку
                 pushFieldAndResult('.',".");
                 break;
             case R.id.button_root:
-                memory.setTextOnField(calculator.getROOT());
-                showField();
+                operationOnField(calculator.getROOT());
                 break;
             case R.id.button_percent:
-                memory.setTextOnField(calculator.getPERCENT());
-                showField();
+                operationOnField(calculator.getPERCENT());
                 break;
             case R.id.button_delete:
                 memory.deleteLast();
@@ -148,9 +133,23 @@ public class MainActivity extends Options implements View.OnClickListener{
                 startActivity(intent);
                 break;
             case R.id.button_equals:
-
+                operationOnField(calculator.getEQUALS());
                 break;
         }
+    }
+
+    private void operationOnField(char operationAction) {
+        memory.setTextOnField(operationAction);
+        if(calculator.getVal1()==0){
+            calculator.setVal1(Double.parseDouble(calculator.getNumber()));
+        } else {
+            calculator.setVal2(Double.parseDouble(calculator.getNumber()));
+        }
+        calcTextResult.setText(Double.toString(calculator.operation(calculator.getAction(), calculator.getVal1(), calculator.getVal2())));
+        calculator.setVal1(calculator.operation(calculator.getAction(), calculator.getVal1(), calculator.getVal2()));
+        calculator.setAction(operationAction);
+        calculator.setNumber("");
+        showField();
     }
 
     private void pushFieldAndResult(int num, String number) {

@@ -15,6 +15,7 @@ public class Calculator {
     private final char DIVISION = '/';
     private final char ROOT = '√';
     private final char PERCENT = '%';
+    private final char EQUALS = '=';
     private char action;
     private String number = "";
     private double val1;
@@ -34,16 +35,24 @@ public class Calculator {
             case MINUS:
                 return val1 - val2;
             case COMPOSITION:
+                if (val2 == 0) val1 = 1;
                 return val1 * val2;
             case DIVISION:
+                if (val2 == 0) val1 = 1;
                 return val1 / val2;
             case ROOT:
+                if (val2 == 0) //TODO toats
                 return val1 / val1;
             case PERCENT:
                 return (val1 / 100) * val2;
             default:
                 return val1;
         }
+    }
+
+
+    public char getEQUALS() {
+        return EQUALS;
     }
 
     public void setVal1(double val1) {
