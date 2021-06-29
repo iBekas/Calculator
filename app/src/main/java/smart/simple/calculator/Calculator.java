@@ -9,30 +9,48 @@ import java.util.Map;
 
 public class Calculator {
 
-    private Map<Character, ArrayList<Float>> resultCalculator = new HashMap<>();
-    private float result;
-    private List list;
+    private final char PLUS = '+';
+    private final char MINUS = '-';
+    private final char COMPOSITION = '×';
+    private final char DIVISION = '/';
+    private final char ROOT = '√';
+    private final char PERCENT = '%';
+    private char action;
 
     public Calculator() {
+        this.action = getAction();
     }
 
-    private void initOperations (StringBuilder operations) {
-        this.list = new ArrayList(Collections.singleton(operations));
-        if(list.contains('+')) this.resultCalculator.put('+', new ArrayList<>(Arrays.asList((float) 0)));
-        //тут еще надо подумать, если первое введное число отрицательное
-        if(list.contains('-')) this.resultCalculator.put('-', new ArrayList<>(Arrays.asList((float) 0)));
-        if(list.contains('×')) this.resultCalculator.put('×', new ArrayList<>(Arrays.asList((float) 1)));
-        if(list.contains('/')) this.resultCalculator.put('/', new ArrayList<>(Arrays.asList((float) 1)));
-        if(list.contains('√')) this.resultCalculator.put('√', new ArrayList<>(Arrays.asList((float) 1)));
-        if(list.contains('%')) this.resultCalculator.put('%', new ArrayList<>(Arrays.asList((float) 1)));
+    public void setAction(char action) {
+        this.action = action;
     }
 
-    private void typeOfOperation (){
-        while (list.contains('×')) {
-
-        }
+    public char getPLUS() {
+        return PLUS;
     }
 
+    public char getMINUS() {
+        return MINUS;
+    }
 
+    public char getCOMPOSITION() {
+        return COMPOSITION;
+    }
+
+    public char getDIVISION() {
+        return DIVISION;
+    }
+
+    public char getROOT() {
+        return ROOT;
+    }
+
+    public char getPERCENT() {
+        return PERCENT;
+    }
+
+    public char getAction() {
+        return action;
+    }
 
 }

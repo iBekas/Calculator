@@ -14,7 +14,9 @@ import android.widget.TextView;
 public class MainActivity extends Options implements View.OnClickListener{
 
     private TextView calcText;
+    private TextView calcTextResult;
     private SetTextOnField memory;
+    private Calculator calculator;
     private static final String KEY = "KeyValues";
 
     private Button buttonZero;
@@ -39,11 +41,13 @@ public class MainActivity extends Options implements View.OnClickListener{
     private Button buttonEquals;
     private Button buttonOptions;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         memory = new SetTextOnField();
+        calculator = new Calculator();
         initButtonAndText();
     }
 
@@ -105,19 +109,19 @@ public class MainActivity extends Options implements View.OnClickListener{
                 showField();
                 break;
             case R.id.button_plus:
-                memory.setTextOnField('+');
+                memory.setTextOnField(calculator.getPLUS());
                 showField();
                 break;
             case R.id.button_minus:
-                memory.setTextOnField('-');
+                memory.setTextOnField(calculator.getMINUS());
                 showField();
                 break;
             case R.id.button_composition:
-                memory.setTextOnField('×');
+                memory.setTextOnField(calculator.getCOMPOSITION());
                 showField();
                 break;
             case R.id.button_division:
-                memory.setTextOnField('/');
+                memory.setTextOnField(calculator.getDIVISION());
                 showField();
                 break;
             case R.id.button_dot:
@@ -125,11 +129,11 @@ public class MainActivity extends Options implements View.OnClickListener{
                 showField();
                 break;
             case R.id.button_root:
-                memory.setTextOnField('√');
+                memory.setTextOnField(calculator.getROOT());
                 showField();
                 break;
             case R.id.button_percent:
-                memory.setTextOnField('%');
+                memory.setTextOnField(calculator.getPERCENT());
                 showField();
                 break;
             case R.id.button_delete:
@@ -172,6 +176,7 @@ public class MainActivity extends Options implements View.OnClickListener{
         buttonDeleteAll = findViewById(R.id.button_delete_all);
         buttonEquals = findViewById(R.id.button_delete_all);
         calcText = findViewById(R.id.show_result);
+        calcTextResult = findViewById(R.id.show_result_two);
         buttonOptions = findViewById(R.id.button_options);
 
     }
