@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ public class MainActivity extends Options implements View.OnClickListener {
     private TextView calcTextResult;
     private SetTextOnField memory;
     private Calculator calculator;
+    private Parcelable[] values;
     private static final String KEY = "KeyValues";
 
     private Button buttonZero;
@@ -47,6 +49,7 @@ public class MainActivity extends Options implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         memory = new SetTextOnField();
         calculator = new Calculator();
+        values = new Parcelable[]{memory, calculator};
         initButtonAndText();
     }
 

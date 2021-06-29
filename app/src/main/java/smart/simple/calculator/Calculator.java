@@ -1,5 +1,8 @@
 package smart.simple.calculator;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Calculator {
+public class Calculator implements Parcelable {
 
     private final char PLUS = '+';
     private final char MINUS = '-';
@@ -27,6 +30,18 @@ public class Calculator {
         val1 = 0;
         val2 = 0;
     }
+
+    public static final Creator<Calculator> CREATOR = new Creator<Calculator>() {
+        @Override
+        public Calculator createFromParcel(Parcel in) {
+            return new Calculator(in);
+        }
+
+        @Override
+        public Calculator[] newArray(int size) {
+            return new Calculator[size];
+        }
+    };
 
     public double operation(char action, double val1, double val2) {
         switch (action) {
@@ -115,4 +130,29 @@ public class Calculator {
         return action;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt((int) PLUS);
+        dest.writeInt((int) MINUS);
+        dest.writeInt((int) COMPOSITION);
+        dest.writeInt((int) DIVISION);
+        dest.writeInt((int) ROOT);
+        dest.writeInt((int) PERCENT);
+        dest.writeInt((int) EQUALS);
+        dest.writeInt((int) action);
+        dest.writeDouble(val1);
+        dest.writeDouble(val2);
+    }
+
+    protected Calculator(Parcel in) {
+        action = (char) in.readInt();
+        val1 = in.readDouble();
+        val2 = in.readDouble();
+        number = this.number.append(in.readString());
+    }
 }
