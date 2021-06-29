@@ -148,7 +148,7 @@ public class MainActivity extends Options implements View.OnClickListener{
         calcTextResult.setText(Double.toString(calculator.operation(calculator.getAction(), calculator.getVal1(), calculator.getVal2())));
         calculator.setVal1(calculator.operation(calculator.getAction(), calculator.getVal1(), calculator.getVal2()));
         calculator.setAction(operationAction);
-        calculator.setNumber("");
+        calculator.clearNumber();
         showField();
     }
 

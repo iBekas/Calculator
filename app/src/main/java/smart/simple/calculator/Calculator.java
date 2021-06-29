@@ -17,7 +17,7 @@ public class Calculator {
     private final char PERCENT = '%';
     private final char EQUALS = '=';
     private char action;
-    private String number = "";
+    private StringBuilder number =new StringBuilder("");
     private double val1;
     private double val2;
 
@@ -41,7 +41,7 @@ public class Calculator {
                 if (val2 == 0) val1 = 1;
                 return val1 / val2;
             case ROOT:
-                if (val2 == 0) //TODO toats
+                if (val2 == 0) //TODO криво работает
                 return val1 / val1;
             case PERCENT:
                 return (val1 / 100) * val2;
@@ -63,12 +63,16 @@ public class Calculator {
         this.val2 = val2;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public String getNumber() {
+        return number.toString();
     }
 
-    public String getNumber() {
-        return number;
+    public void setNumber(String number) {
+        this.number.append(number);
+    }
+
+    public void clearNumber() {
+        this.number.delete(0,this.number.length());
     }
 
     public double getVal1() {
