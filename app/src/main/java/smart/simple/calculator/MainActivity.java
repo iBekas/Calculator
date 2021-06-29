@@ -164,8 +164,6 @@ public class MainActivity extends Options implements View.OnClickListener{
         calculator.setAction(operationAction);
         calculator.clearNumber();
         showField();
-        calcTextResult.setText("");
-        calcText.setText("");
     }
 
 
@@ -202,7 +200,7 @@ public class MainActivity extends Options implements View.OnClickListener{
         buttonDot = findViewById(R.id.button_dot);
         buttonDelete = findViewById(R.id.button_delete);
         buttonDeleteAll = findViewById(R.id.button_delete_all);
-        buttonEquals = findViewById(R.id.button_delete_all);
+        buttonEquals = findViewById(R.id.button_equals);
         calcText = findViewById(R.id.show_result);
         calcTextResult = findViewById(R.id.show_result_two);
         buttonOptions = findViewById(R.id.button_options);
