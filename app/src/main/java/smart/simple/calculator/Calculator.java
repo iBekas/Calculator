@@ -23,6 +23,35 @@ public class Calculator {
 
     public Calculator() {
         this.action = getAction();
+        val1 = 0;
+        val2 =0;
+    }
+
+    public double operation(char action, double val1, double val2){
+        switch (action){
+            case PLUS:
+                return val1+= val2;
+            case MINUS:
+                return val1 - val2;
+            case COMPOSITION:
+                return val1 * val2;
+            case DIVISION:
+                return val1 / val2;
+            case ROOT:
+                return val1 / val1;
+            case PERCENT:
+                return (val1 / 100) * val2;
+            default:
+                return val1;
+        }
+    }
+
+    public void setVal1(double val1) {
+        this.val1 = val1;
+    }
+
+    public void setVal2(double val2) {
+        this.val2 = val2;
     }
 
     public void setNumber(String number) {

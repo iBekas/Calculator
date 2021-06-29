@@ -108,6 +108,15 @@ public class MainActivity extends Options implements View.OnClickListener{
                 break;
             case R.id.button_plus:
                 memory.setTextOnField(calculator.getPLUS());
+                if(calculator.getVal1()==0){
+                    calculator.setVal1(Double.parseDouble(calculator.getNumber()));
+                } else {
+                    calculator.setVal2(Double.parseDouble(calculator.getNumber()));
+                }
+                calcTextResult.setText(Double.toString(calculator.operation(calculator.getAction(), calculator.getVal1(), calculator.getVal2())));
+                calculator.setVal1(calculator.operation(calculator.getAction(), calculator.getVal1(), calculator.getVal2()));
+                calculator.setAction(calculator.getPLUS());
+                calculator.setNumber("");
                 showField();
                 break;
             case R.id.button_minus:
@@ -146,9 +155,9 @@ public class MainActivity extends Options implements View.OnClickListener{
                 Intent intent = new Intent(MainActivity.this, Options.class);
                 startActivity(intent);
                 break;
-//            case R.id.button_equals:
-//
-//                break;
+            case R.id.button_equals:
+
+                break;
         }
     }
 
