@@ -5,4 +5,5 @@
     <dimen name="aspect_ratio">0dp</dimen>
     <dimen name="margin_all">0dp</dimen>
     <dimen name="options_size">7sp</dimen>
+    <dimen name="text_size_on_field">40sp</dimen>
 </resources>
