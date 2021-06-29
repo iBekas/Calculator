@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_size">20sp</dimen>
+    <dimen name="text_size">15sp</dimen>
     <dimen name="margin_top_textView">10dp</dimen>
     <dimen name="aspect_ratio">0dp</dimen>
     <dimen name="margin_all">0dp</dimen>
     <dimen name="options_size">7sp</dimen>
-    <dimen name="text_size_on_field">40sp</dimen>
+    <dimen name="text_size_on_field">30sp</dimen>
 </resources>

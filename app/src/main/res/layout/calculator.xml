@@ -19,8 +19,8 @@
         app:layout_constraintEnd_toEndOf="@id/button_root"
         app:layout_constraintHeight_percent="0.15"
         app:layout_constraintStart_toStartOf="@id/button_delete_all"
-        app:layout_constraintTop_toBottomOf="@+id/show_result_two"
-/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/show_result_two"
@@ -31,12 +31,10 @@
         android:gravity="end|bottom"
         android:text="@string/zero_on_field"
         android:textSize="@dimen/text_size_on_field"
-        app:layout_constraintBottom_toTopOf="@+id/show_result"
         app:layout_constraintHeight_percent="0.1"
-        app:layout_constraintStart_toStartOf="@+id/show_result"
-        app:layout_constraintEnd_toEndOf="@+id/show_result"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintStart_toStartOf="@id/button_delete_all"
+        app:layout_constraintEnd_toEndOf="@id/button_root"
+        app:layout_constraintTop_toBottomOf="@id/show_result" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_delete_all"
