@@ -17,7 +17,7 @@ public class Calculator {
     private final char PERCENT = '%';
     private final char EQUALS = '=';
     private char action;
-    private StringBuilder number =new StringBuilder("");
+    private StringBuilder number = new StringBuilder("");
     private double val1;
     private double val2;
 
@@ -28,10 +28,10 @@ public class Calculator {
         val2 = 0;
     }
 
-    public double operation(char action, double val1, double val2){
-        switch (action){
+    public double operation(char action, double val1, double val2) {
+        switch (action) {
             case PLUS:
-                return val1+= val2;
+                return val1 + val2;
             case MINUS:
                 return val1 - val2;
             case COMPOSITION:
@@ -42,7 +42,7 @@ public class Calculator {
                 return val1 / val2;
             case ROOT:
                 if (val2 == 0) //TODO криво работает
-                return val1 / val1;
+                    return val1 / val1;
             case PERCENT:
                 return (val1 / 100) * val2;
             default:
@@ -72,7 +72,7 @@ public class Calculator {
     }
 
     public void clearNumber() {
-        this.number.delete(0,this.number.length());
+        this.number.delete(0, this.number.length());
     }
 
     public double getVal1() {

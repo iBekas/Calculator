@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-class SetTextOnField implements Parcelable{ //  в данном случае я осознанно ограничиваю пакетом, если я не прав поправьте меня. Не вижу здесь надобности в других модификаторах.
+class SetTextOnField implements Parcelable { //  в данном случае я осознанно ограничиваю пакетом, если я не прав поправьте меня. Не вижу здесь надобности в других модификаторах.
     StringBuilder entryField;
 
     public SetTextOnField() {
@@ -31,26 +31,26 @@ class SetTextOnField implements Parcelable{ //  в данном случае я 
         }
     };
 
-    void setTextOnField(int number){
+    void setTextOnField(int number) {
         this.entryField.append(number);
     }
 
-    void setTextOnField(char operation){
+    void setTextOnField(char operation) {
         this.entryField.append(operation);
     }
 
-    void setTextOnField(String operation){
+    void setTextOnField(String operation) {
         this.entryField.append(operation);
     }
 
-    void deleteLast(){
+    void deleteLast() {
         if (this.entryField.length() != 0) {
-            this.entryField.deleteCharAt(this.entryField.length()-1);
+            this.entryField.deleteCharAt(this.entryField.length() - 1);
         }
     }
 
-    void deleteAll(){
-        this.entryField.delete(0,this.entryField.length());
+    void deleteAll() {
+        this.entryField.delete(0, this.entryField.length());
     }
 
 

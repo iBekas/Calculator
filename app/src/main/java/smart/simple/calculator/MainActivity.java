@@ -10,8 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-
-public class MainActivity extends Options implements View.OnClickListener{
+public class MainActivity extends Options implements View.OnClickListener {
 
     private TextView calcText;
     private TextView calcTextResult;
@@ -67,36 +66,36 @@ public class MainActivity extends Options implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.button_0:
-                pushFieldAndResult(0,"0");
+                pushFieldAndResult(0, "0");
                 break;
             case R.id.button_1:
-                pushFieldAndResult(1,"1");
+                pushFieldAndResult(1, "1");
                 break;
             case R.id.button_2:
-                pushFieldAndResult(2,"2");
+                pushFieldAndResult(2, "2");
                 break;
             case R.id.button_3:
-                pushFieldAndResult(3,"3");
+                pushFieldAndResult(3, "3");
                 break;
             case R.id.button_4:
-                pushFieldAndResult(4,"4");
+                pushFieldAndResult(4, "4");
                 break;
             case R.id.button_5:
-                pushFieldAndResult(5,"5");
+                pushFieldAndResult(5, "5");
                 break;
             case R.id.button_6:
-                pushFieldAndResult(6,"6");
+                pushFieldAndResult(6, "6");
                 break;
             case R.id.button_7:
-                pushFieldAndResult(7,"7");
+                pushFieldAndResult(7, "7");
                 break;
             case R.id.button_8:
-                pushFieldAndResult(8,"8");
+                pushFieldAndResult(8, "8");
                 break;
             case R.id.button_9:
-                pushFieldAndResult(9,"9");
+                pushFieldAndResult(9, "9");
                 break;
             case R.id.button_plus:
                 operationOnField(calculator.getPLUS());
@@ -112,7 +111,7 @@ public class MainActivity extends Options implements View.OnClickListener{
                 break;
             case R.id.button_dot:
                 // TODO криво читает точку
-                pushFieldAndResult('.',".");
+                pushFieldAndResult('.', ".");
                 break;
             case R.id.button_root:
                 operationOnField(calculator.getROOT());
@@ -133,14 +132,14 @@ public class MainActivity extends Options implements View.OnClickListener{
                 startActivity(intent);
                 break;
             case R.id.button_equals:
-                operationOnField(calculator.getEQUALS(), 0);
+                operationOnField(calculator.getEQUALS());
                 break;
         }
     }
 
     private void operationOnField(char operationAction) {
         memory.setTextOnField(operationAction);
-        if(calculator.getVal1()==0){
+        if (calculator.getVal1() == 0) {
             calculator.setVal1(Double.parseDouble(calculator.getNumber()));
         } else {
             calculator.setVal2(Double.parseDouble(calculator.getNumber()));
@@ -151,27 +150,23 @@ public class MainActivity extends Options implements View.OnClickListener{
         calculator.clearNumber();
         showField();
     }
-
-    private void operationOnField(char operationAction, int x) {
-        memory.setTextOnField(operationAction);
-        if(calculator.getVal1()==0){
-            calculator.setVal1(Double.parseDouble(calculator.getNumber()));
-        } else {
-            calculator.setVal2(Double.parseDouble(calculator.getNumber()));
-        }
-        calcTextResult.setText(Double.toString(calculator.operation(calculator.getAction(), calculator.getVal1(), calculator.getVal2())));
-        calculator.setVal1(calculator.operation(calculator.getAction(), calculator.getVal1(), calculator.getVal2()));
-        calculator.setAction(operationAction);
-        calculator.clearNumber();
-        showField();
-    }
-
 
 
     private void pushFieldAndResult(int num, String number) {
+        checkEquals();
         memory.setTextOnField(num);
         calculator.setNumber(number);
         showField();
+    }
+
+    private void checkEquals() {
+        if (calculator.getAction() == calculator.getEQUALS()) {
+            memory.deleteAll();
+            showField();
+            calculator.clearNumber();
+            calculator.setVal1(0);
+            calcTextResult.setText(calculator.getNumber());
+        }
     }
 
     private void pushFieldAndResult(char num, String number) {
@@ -180,7 +175,7 @@ public class MainActivity extends Options implements View.OnClickListener{
         showField();
     }
 
-    private void initButtonAndText(){
+    private void initButtonAndText() {
         buttonZero = findViewById(R.id.button_0);
         buttonOne = findViewById(R.id.button_1);
         buttonTwo = findViewById(R.id.button_2);
@@ -207,7 +202,7 @@ public class MainActivity extends Options implements View.OnClickListener{
 
     }
 
-    private void listenerButton(){
+    private void listenerButton() {
         buttonZero.setOnClickListener(this);
         buttonOne.setOnClickListener(this);
         buttonTwo.setOnClickListener(this);
@@ -231,16 +226,16 @@ public class MainActivity extends Options implements View.OnClickListener{
         buttonOptions.setOnClickListener(this);
     }
 
-    private void showField(){
+    private void showField() {
         calcText.setText(memory.entryField.toString());
     }
 
-    private void pasteText(){
+    private void pasteText() {
         Intent intent = getIntent();
         String action = intent.getAction();
         String type = intent.getType();
 
-        if(Intent.ACTION_SEND.endsWith(action)&&type.equals("text/*")){
+        if (Intent.ACTION_SEND.endsWith(action) && type.equals("text/*")) {
 //            buttonOptions.setText(intent.getStringExtra(Intent.EXTRA_TEXT));
             memory.setTextOnField(intent.getStringExtra(Intent.EXTRA_TEXT));
             showField();
